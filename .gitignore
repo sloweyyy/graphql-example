@@ -6,3 +6,4 @@ coverage/
 .idea
 .env
 /.github
+README.md.local

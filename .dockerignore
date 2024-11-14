@@ -1,0 +1,7 @@
+node_modules
+dist
+coverage
+.git
+README.md
+EXAMPLES.md
+README.md.local
