@@ -91,8 +91,8 @@ Create new author:
 ```GraphQL
 mutation {
   createAuthor(input:{
-    firstName:"Kent"
-    lastName:"Beck"
+    firstName:"Phuc"
+    lastName:"Truong"
   }) {
     id
     _id
@@ -108,8 +108,8 @@ Update existing author:
 mutation {
   updateAuthor(input:{
     id: 1
-    firstName: "JOHN"
-    lastName: "JOHNSON"
+    firstName: "Tai"
+    lastName: "Ngu"
   }) {
     id
     _id
@@ -126,6 +126,27 @@ mutation {
   createQuote(input: {
     authorId: 1, // Replace with a valid author ID
     text: "This is a new quote."
+  }) {
+    id
+    _id
+    text
+    author {
+      id
+      _id
+      firstName
+      lastName
+    }
+  }
+}
+```
+
+Update existing quote:
+
+```GraphQL
+mutation {
+  updateQuote(input: {
+    id: 1,
+    text: "Đây là một quote đã được cập nhật."
   }) {
     id
     _id
