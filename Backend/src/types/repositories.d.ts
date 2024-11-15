@@ -68,4 +68,6 @@ interface QuoteRepository {
   create(params: QuoteRepository.CreateParameters): Promise<Quote>;
 
   update(params: QuoteRepository.UpdateParameters): Promise<Quote>;
+
+  delete(id: number): Promise<Quote>;
 }

@@ -1,7 +1,7 @@
 import { GraphQLInputObjectType, GraphQLNonNull, GraphQLInt } from "graphql";
 
-const deleteAuthorInput = new GraphQLInputObjectType({
-  name: "deleteAuthorInput",
+const deleteQuoteInput = new GraphQLInputObjectType({
+  name: "deleteQuoteInput",
   fields: {
     id: {
       type: new GraphQLNonNull(GraphQLInt),
@@ -9,4 +9,4 @@ const deleteAuthorInput = new GraphQLInputObjectType({
   },
 });
 
-export default deleteAuthorInput;
+export default deleteQuoteInput;

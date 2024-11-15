@@ -2,6 +2,8 @@ import database from "../database";
 import logger from "../logger";
 
 export default class QuoteKnexRepository implements QuoteRepository {
+  private quotesList: Quote[] = [];
+
   public async get(id: number): Promise<Quote> {
     logger.debug(`${this.constructor.name}.get`, { id });
 
@@ -82,5 +84,15 @@ export default class QuoteKnexRepository implements QuoteRepository {
     });
 
     return this.get(params.id);
+  }
+
+  public async delete(id: number): Promise<Quote> {
+    logger.debug(`${this.constructor.name}.delete`, { id });
+
+    const quote = await this.get(id);
+
+    await database("quote").where("id", id).delete();
+
+    return quote;
   }
 }

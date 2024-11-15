@@ -8,6 +8,7 @@ import createAuthor from "./mutations/createAuthor";
 import deleteAuthor from "./mutations/deleteAuthor";
 import createQuote from "./mutations/createQuote";
 import updateQuote from "./mutations/updateQuote";
+import deleteQuote from "./mutations/deleteQuote";
 
 export default {
   get Author() {
@@ -79,5 +80,12 @@ export default {
       this._updateQuoteMutation = updateQuote(this);
     }
     return this._updateQuoteMutation;
+  },
+
+  get DeleteQuote() {
+    if (typeof this._deleteQuoteMutation === "undefined") {
+      this._deleteQuoteMutation = deleteQuote(this);
+    }
+    return this._deleteQuoteMutation;
   },
 };

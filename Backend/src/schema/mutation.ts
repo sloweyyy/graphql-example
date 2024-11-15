@@ -7,6 +7,7 @@ const mutation = new GraphQLObjectType({
     createAuthor: types.CreateAuthor,
     deleteAuthor: types.DeleteAuthor,
     createQuote: types.CreateQuote,
+    deleteQuote: types.DeleteQuote,
     updateQuote: types.UpdateQuote,
   }),
 });

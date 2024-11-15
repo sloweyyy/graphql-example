@@ -326,4 +326,16 @@ export default class QuoteKnexRepository implements QuoteRepository {
 
     return quote;
   }
+
+  public async delete(id: number): Promise<Quote> {
+    logger.debug(`${this.constructor.name}.delete`, { id });
+
+    const quote = quotesList.find((q) => q.id === id);
+
+    if (quote) {
+      quotesList.splice(quotesList.indexOf(quote), 1);
+    }
+
+    return quote;
+  }
 }
