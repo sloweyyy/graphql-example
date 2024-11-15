@@ -11,7 +11,6 @@ This project is a GraphQL API for managing quotes and authors. It allows users t
   - [Queries](#queries)
   - [Mutations](#mutations)
 - [Testing](#testing)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Features
