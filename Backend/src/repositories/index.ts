@@ -1,16 +1,16 @@
-import AuthorKnexRepository from './AuthorKnexRepository';
-import AuthorArrayRepository from './AuthorArrayRepository';
-import QuoteKnexRepository from './QuoteKnexRepository';
-import QuoteArrayRepository from './QuoteArrayRepository';
-import config from '../config';
+import AuthorKnexRepository from "./AuthorKnexRepository";
+import AuthorArrayRepository from "./AuthorArrayRepository";
+import QuoteKnexRepository from "./QuoteKnexRepository";
+import QuoteArrayRepository from "./QuoteArrayRepository";
+import config from "../config";
 
 const container = {
   get Author(): AuthorRepository {
-    if (typeof this._author === 'undefined') {
-      if (typeof config.database.connection.host === 'string') {
+    if (typeof this._author === "undefined") {
+      if (typeof config.database.connection.host === "string") {
         this._author = new AuthorKnexRepository();
       } else {
-        this._author = new AuthorArrayRepository();
+        // this._author = new AuthorArrayRepository();
       }
     }
 
@@ -18,11 +18,11 @@ const container = {
   },
 
   get Quote(): QuoteRepository {
-    if (typeof this._quote === 'undefined') {
-      if (typeof config.database.connection.host === 'string') {
+    if (typeof this._quote === "undefined") {
+      if (typeof config.database.connection.host === "string") {
         this._quote = new QuoteKnexRepository();
       } else {
-        this._quote = new QuoteArrayRepository();
+        // this._quote = new QuoteArrayRepository();
       }
     }
 

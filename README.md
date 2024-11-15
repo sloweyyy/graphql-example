@@ -40,59 +40,72 @@ This project is a GraphQL API for managing quotes and authors. It allows users t
 
 ### Installation
 
-1. Clone the repository:
+### 1. Clone the Repository:
 
-   ```bash
-   git clone https://github.com/sloweyyy/GraphQL-Express-Demo.git
-   ```
+```bash
+git clone https://github.com/sloweyyy/graphql-example.git
+cd graphql-example/Backend
+```
 
-2. Install dependencies:
+### 2. Install Dependencies:
 
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+Choose your preferred package manager:
 
-3. Set up your database:
+```bash
+# With npm:
+npm install
 
-   - Create a MySQL database.
-   - Update the database connection settings in the `.env` file.
+# Or with yarn:
+yarn install
+```
 
-   #### If use npm:
+### 3. Set Up Your Database:
 
-4. Run database migrations and seed the database:
+- Create a MySQL database.
+- Update the database connection settings in the `.env` file.
 
-   ```bash
-   npm run migrate
-   npm run seed
-   ```
+### 4. Run Migrations and Seed the Database:
 
-5. Start the server:
+```bash
+# With npm:
+npm run migrate
+npm run seed
 
-   ```bash
-   npm start
-   # or
-   yarn start
-   ```
+# Or with yarn:
+yarn run migrate
+yarn run seed
+```
 
-   #### If use docker:
+### 5. Start the Server:
 
-   ```bash
-   docker-compose up --build
-   ```
+```bash
+# With npm:
+npm start
 
-6. Run the frontend project to interact with the API.
-   ```
-   cd Frontend
-   yarn install
-   yarn run relay
-   yarn start
-   ```
+# Or with yarn:
+yarn start
+```
 
-The server will run on `http://localhost:3010/graphql`.
-The frontend will run on `http://localhost:3000`.
-The playground will be available at `http://localhost:3010/playground`.
+Alternatively, you can use Docker to build and run the project:
+
+```bash
+docker-compose up --build
+```
+
+### 6. Start the Frontend:
+
+```bash
+cd Frontend
+yarn install
+yarn run relay
+yarn start
+```
+
+### Access URLs:
+
+- **Server:** `http://localhost:3010/graphql`
+- **Frontend:** `http://localhost:3000`
+- **GraphQL Playground:** `http://localhost:3010/playground`
 
 ## API Endpoints
 
@@ -259,19 +272,47 @@ mutation {
 }
 ```
 
+Delete an author:
+
+```GraphQL
+mutation {
+  deleteAuthor(id: 1) {
+    id
+    _id
+    firstName
+    lastName
+  }
+}
+```
+
+Delete a quote:
+
+```GraphQL
+mutation {
+  deleteQuote(id: 1) {
+    id
+    _id
+    text
+    author {
+      id
+      _id
+      firstName
+      lastName
+    }
+  }
+}
+```
+
 ## Testing
 
 To run the tests for the API, use the following command:
 
 ```bash
+cd Backend
 npm test
 # or
 yarn test
 ```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a pull request or open an issue for any feature requests or bug reports.
 
 ## License
 
