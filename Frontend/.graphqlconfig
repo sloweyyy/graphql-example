@@ -1,0 +1,14 @@
+{
+   "projects":{
+      "quotes":{
+         "schemaPath":"schema.graphql",
+         "extensions":{
+            "endpoints":{
+               "local": "http://localhost:3010/graphql",
+               "default":"http://localhost:3010/graphql",
+               "prod":"http://localhost:3010/graphql"
+            }
+         }
+      }
+   }
+}

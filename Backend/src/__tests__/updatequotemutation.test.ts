@@ -48,14 +48,14 @@ test("updateQuote mutation", async () => {
   expect(JSON.parse(response.text)).toEqual({
     data: {
       updateQuote: {
-        id: expect.any(String), // Kiểm tra rằng ID được trả về
-        _id: expect.any(String), // Kiểm tra rằng ID trong cơ sở dữ liệu được trả về
+        id: expect.any(String),
+        _id: expect.any(String),
         text: "Đây là một quote đã được cập nhật.",
         author: {
-          id: "YXV0aG9yLTE=", // ID của tác giả
+          id: "YXV0aG9yLTE=",
           _id: "1",
-          firstName: "John", // Điều chỉnh theo dữ liệu tác giả của bạn
-          lastName: "Johnson", // Điều chỉnh theo dữ liệu tác giả của bạn
+          firstName: "John",
+          lastName: "Johnson",
         },
       },
     },

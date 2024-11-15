@@ -44,7 +44,6 @@ This project is a GraphQL API for managing quotes and authors. It allows users t
 
    ```bash
    git clone https://github.com/sloweyyy/GraphQL-Express-Demo.git
-   cd GraphQL-Express-Demo
    ```
 
 2. Install dependencies:
@@ -59,6 +58,8 @@ This project is a GraphQL API for managing quotes and authors. It allows users t
 
    - Create a MySQL database.
    - Update the database connection settings in the `.env` file.
+
+   #### If use npm:
 
 4. Run database migrations and seed the database:
 
@@ -75,7 +76,23 @@ This project is a GraphQL API for managing quotes and authors. It allows users t
    yarn start
    ```
 
+   #### If use docker:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+6. Run the frontend project to interact with the API.
+   ```
+   cd Frontend
+   yarn install
+   yarn run relay
+   yarn start
+   ```
+
 The server will run on `http://localhost:3010/graphql`.
+The frontend will run on `http://localhost:3000`.
+The playground will be available at `http://localhost:3010/playground`.
 
 ## API Endpoints
 
