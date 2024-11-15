@@ -1,4 +1,4 @@
-declare namespace  AuthorRepository {
+declare namespace AuthorRepository {
   interface CreateParameters {
     firstName: string;
     lastName: string;
@@ -46,6 +46,16 @@ declare namespace QuoteRepository {
     authorId?: number;
     query?: string;
   }
+
+  interface CreateParameters {
+    authorId: number;
+    text: string;
+  }
+
+  interface UpdateParameters {
+    id: number;
+    text: string;
+  }
 }
 
 interface QuoteRepository {
@@ -54,4 +64,8 @@ interface QuoteRepository {
   find(params: QuoteRepository.FindParameters): Promise<Quote[]>;
 
   count(params: QuoteRepository.CountParameters): Promise<number>;
+
+  create(params: QuoteRepository.CreateParameters): Promise<Quote>;
+
+  update(params: QuoteRepository.UpdateParameters): Promise<Quote>;
 }

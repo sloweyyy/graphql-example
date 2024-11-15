@@ -1,6 +1,6 @@
 # Example Queries
 
-Get list of authors (*it will return only first 10 authors!*):
+Get list of authors (_it will return only first 10 authors!_):
 
 ```graphql
 query {
@@ -39,16 +39,12 @@ Order authors by first name and last name:
 
 ```graphql
 query {
-  authors(orderBy:[
-    {
-      field:FIRST_NAME
-      direction:ASC
-    }
-    {
-      field:LAST_NAME
-      direction:ASC
-    }
-  ]) {
+  authors(
+    orderBy: [
+      { field: FIRST_NAME, direction: ASC }
+      { field: LAST_NAME, direction: ASC }
+    ]
+  ) {
     edges {
       cursor
       node {
@@ -83,7 +79,7 @@ query {
       node {
         id
         _id
-        quote
+        text
       }
     }
   }
@@ -119,6 +115,27 @@ mutation {
     _id
     firstName
     lastName
+  }
+}
+```
+
+Create new quote:
+
+```GraphQL
+mutation {
+  createQuote(input: {
+    authorId: 1, // Replace with a valid author ID
+    text: "This is a new quote."
+  }) {
+    id
+    _id
+    text
+    author {
+      id
+      _id
+      firstName
+      lastName
+    }
   }
 }
 ```

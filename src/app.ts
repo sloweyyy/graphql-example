@@ -4,8 +4,7 @@ import responseTime from './middlewares/reponseTime';
 import cors from './middlewares/cors';
 import context from './context';
 import schema from './schema';
-import {  } from 'graphql-http/lib/use/http';
-import expressPlayground from 'graphql-playground-middleware-express'
+import playgroundMiddleware from 'graphql-playground-middleware-express'
 
 const app = express();
 
@@ -20,7 +19,8 @@ app.all('/graphql', createHandler({
   context: context as any,
 }));
 
-app.get('/playground', expressPlayground({ endpoint: '/graphql' }))
+app.get('/playground', playgroundMiddleware({ endpoint: '/graphql' })); 
+
 
 export default app;
 

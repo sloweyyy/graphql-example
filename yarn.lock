@@ -2450,9 +2450,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"express-graphql-example@workspace:.":
+"express-graphql-demo@workspace:.":
   version: 0.0.0-use.local
-  resolution: "express-graphql-example@workspace:."
+  resolution: "express-graphql-demo@workspace:."
   dependencies:
     "@godaddy/terminus": "npm:^4.12.1"
     "@types/express": "npm:^4.17.3"
