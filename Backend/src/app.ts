@@ -21,6 +21,5 @@ app.all('/graphql', createHandler({
 
 app.get('/playground', playgroundMiddleware({ endpoint: '/graphql' })); 
 
-
 export default app;
 

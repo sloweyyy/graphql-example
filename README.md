@@ -8,8 +8,6 @@ This project is a GraphQL API for managing quotes and authors. It allows users t
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [API Endpoints](#api-endpoints)
-  - [Queries](#queries)
-  - [Mutations](#mutations)
 - [Testing](#testing)
 - [License](#license)
 
